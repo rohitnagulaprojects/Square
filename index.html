@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Square</title>
+    <style>
+       *{
+           font-size : 50px;
+           font-family : Ink Free;
+         }
+        body{
+           background-color : azure;
+           }
+        center h1{
+          background-color : black;
+          color : white;
+          border-radius : 40px;
+          width : 50%;
+          } 
+           
+    </style> 
+
+</head>
+<body>
+  <center>
+
+      <h1>Find Square</h1>
+      <form onsubmit = find()>
+       <input type = "number" step = "any" placeholder = "enter number" id = "num"/>
+
+       <br/><br/>
+       <input type = "submit" value = "Find Square"/>
+      </form>
+       <h1 id = "msg"/>
+  <center>
+  <script>
+      function find()
+      {
+          event.preventDefault();
+          let num = document.getElementById("num");
+          let msg = document.getElementById("msg");
+
+          if  (num.value === "")
+          {
+
+            alert("Enter A Number");
+            msg.innerHTML = "";
+            num.focus();
+            return;
+          }
+        
+          let n = parseFloat(num.value);
+          let nm = n * n;
+          let msgg = "Square = "+nm.toFixed(2);
+          msg.innerHTML = msgg;
+      }
+  </script>
+</body>
+
+</html>
